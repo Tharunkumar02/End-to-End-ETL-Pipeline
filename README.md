@@ -1,57 +1,99 @@
 <img width="1644" height="781" alt="image" src="https://github.com/user-attachments/assets/1a801508-77a7-4b23-899d-dbd7f5176e9a" />
 
 
-**Formula 1 ETL Pipeline (Bronze → Silver → Gold)**
+# 🏎️ Formula 1 ETL Pipeline (Bronze → Silver → Gold)
 
-This project develops a comprehensive ETL pipeline for Formula 1 data, utilizing a modern data lakehouse architecture with Bronze, Silver, and Gold tiers. The pipeline collects raw F1 data, cleans and transforms it into datasets suitable for analysis, and generates curated tables for reporting and insights.
+An end-to-end **data engineering project** that builds a scalable ETL pipeline for Formula 1 data using a modern **lakehouse architecture**. The pipeline transforms raw race data into analytics-ready datasets and powers downstream reporting (e.g., Power BI dashboards).
 
-Architecture Summary
+---
 
-The pipeline consists of three main layers:
+## 🚀 Overview
 
-Bronze Layer —> Raw Data Collection
+This project ingests historical Formula 1 datasets and processes them through a **multi-layered architecture**:
 
-Collects raw Formula 1 datasets from source files
+* **Bronze** → Raw ingestion
+* **Silver** → Cleaned and standardized data
+* **Gold** → Business-ready, aggregated insights
 
-Maintains original schema and structure
+The goal is to demonstrate **data pipeline design, transformation logic, and analytics modeling** at scale.
 
-Performs minimal transformations (schema validation, metadata management)
+---
 
-Includes datasets such as:
+## 🏗️ Architecture
 
-**Circuits,
-Races,
-Drivers,
-Constructors,
-Results,
-Pit stops,
-Lap times,
-Qualifying data.**
+### 🥉 Bronze Layer — Raw Data Ingestion
 
-Each dataset has a dedicated ingestion script for scalability and modularity.
+* Ingests raw F1 datasets from source files
+* Preserves original schema (schema-on-read)
+* Performs minimal validation and metadata tracking
+* Modular ingestion scripts for each dataset
 
-Silver Layer —> Data Cleaning and Standardization
+**Datasets include:**
 
-Cleans and standardizes Bronze data
+* Circuits
+* Races
+* Drivers
+* Constructors
+* Results
+* Pit Stops
+* Lap Times
+* Qualifying
 
-Applies data quality checks and transformations
+---
 
-Normalizes schemas and enforces data types
+### 🥈 Silver Layer — Data Cleaning & Standardization
 
-Prepares datasets for analytical purposes
+* Cleans and validates raw data (null handling, deduplication)
+* Standardizes schemas and enforces data types
+* Applies transformation logic for consistency
+* Creates structured tables for each entity
 
-Silver tables are created separately for each entity (races, drivers, constructors, etc.), facilitating debugging and reprocessing.
+➡️ Designed for **reusability, debugging, and incremental processing**
 
-Gold Layer —> Business Logic and Insights
+---
 
-Produces aggregated, curated datasets
+### 🥇 Gold Layer — Analytics & Business Logic
 
-Implements business rules for analytics and reporting
+* Builds curated, aggregated datasets
+* Applies domain-specific logic (standings, scoring, rankings)
+* Optimized for BI tools and reporting
 
-Creates final tables such as:
+**Key outputs:**
 
-**Race results,
-Driver standings,
-Constructor standings.**
+* Driver Standings
+* Constructor Standings
+* Race Results
 
-Gold tables are optimized for downstream consumption by dashboards or BI tools.
+---
+
+## 📊 Use Case
+
+The Gold layer powers interactive dashboards (e.g., Power BI) to analyze:
+
+* Driver and team performance trends
+* Historical race statistics
+* Global distribution of circuits
+
+---
+
+## ⚙️ Key Features
+
+* Layered **Medallion Architecture (Bronze/Silver/Gold)**
+* Modular and scalable pipeline design
+* Data quality checks and schema enforcement
+* Analytics-ready data modeling
+* Integration-ready for BI tools
+
+---
+
+## 🧠 What This Demonstrates
+
+* End-to-end **ETL pipeline development**
+* Data modeling and transformation best practices
+* Scalable data architecture design
+* Turning raw data into actionable insights
+
+---
+
+Here's the downstream Power BI dashboard showing the actual performance of drivers and constructors for each race.
+<img width="1404" height="746" alt="image" src="https://github.com/user-attachments/assets/110b0f52-6349-48d5-a465-7fb1e60e76cc" />

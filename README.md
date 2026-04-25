@@ -3,55 +3,55 @@
 
 **Formula 1 ETL Pipeline (Bronze → Silver → Gold)**
 
-This project implements an end-to-end ETL pipeline for Formula 1 data, following a modern data lakehouse architecture with Bronze, Silver, and Gold layers. The pipeline ingests raw F1 data, cleans and transforms it into analytics-ready datasets, and produces curated tables for reporting and insights.
+This project develops a comprehensive ETL pipeline for Formula 1 data, utilizing a modern data lakehouse architecture with Bronze, Silver, and Gold tiers. The pipeline collects raw F1 data, cleans and transforms it into datasets suitable for analysis, and generates curated tables for reporting and insights.
 
-Architecture Overview
+Architecture Summary
 
-The pipeline is structured into three logical layers:
+The pipeline consists of three main layers:
 
-Bronze Layer —> Raw Ingestion
+Bronze Layer —> Raw Data Collection
 
-Ingests raw Formula 1 datasets from source files
+Collects raw Formula 1 datasets from source files
 
-Preserves original schema and structure
+Maintains original schema and structure
 
-Minimal transformation (schema enforcement, metadata handling)
+Performs minimal transformations (schema validation, metadata management)
 
-Ingested entities include:
+Includes datasets such as:
 
-**Circuits, 
-Races, 
-Drivers, 
-Constructors, 
-Results, 
-Pit stops, 
-Lap times, 
+**Circuits,
+Races,
+Drivers,
+Constructors,
+Results,
+Pit stops,
+Lap times,
 Qualifying data.**
 
-Each dataset has its own ingestion script for modularity and scalability.
+Each dataset has a dedicated ingestion script for scalability and modularity.
 
-Silver Layer —> Data Preparation and Cleansing
+Silver Layer —> Data Cleaning and Standardization
 
 Cleans and standardizes Bronze data
 
-Applies data quality rules and transformations
+Applies data quality checks and transformations
 
 Normalizes schemas and enforces data types
 
-Prepares datasets for analytical use
+Prepares datasets for analytical purposes
 
-Silver tables are created independently per entity (races, drivers, constructors, etc.), enabling easy debugging and reprocessing.
+Silver tables are created separately for each entity (races, drivers, constructors, etc.), facilitating debugging and reprocessing.
 
-Gold Layer —> Business Logic and Analytics
+Gold Layer —> Business Logic and Insights
 
-Produces aggregated and curated datasets
+Produces aggregated, curated datasets
 
-Implements business logic for analytics and reporting
+Implements business rules for analytics and reporting
 
 Creates final tables such as:
 
-**Race results, 
-Driver standings, 
+**Race results,
+Driver standings,
 Constructor standings.**
 
 Gold tables are optimized for downstream consumption by dashboards or BI tools.
